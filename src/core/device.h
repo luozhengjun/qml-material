@@ -21,6 +21,8 @@
 
 class Device : public QObject {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(FormFactor formFactor READ formFactor NOTIFY geometryChanged)
     Q_PROPERTY(QString name READ name NOTIFY geometryChanged)
@@ -45,8 +47,6 @@ public:
     Q_ENUM(FormFactor)
 
     Device(QObject *parent = nullptr);
-
-    static QObject *qmlSingleton(QQmlEngine *engine, QJSEngine *scriptEngine);
 
     FormFactor formFactor() const;
     QString name() const;

@@ -1,0 +1,3 @@
+[submodule "cmake/Qt5QMLPlugin"]
+	path = cmake/Qt5QMLPlugin
+	url = git@github.com:luozhengjun/Qt5QMLPlugin.git

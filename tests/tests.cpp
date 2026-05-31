@@ -16,5 +16,34 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+#include <QDirIterator>
+#include <QDebug>
+#include <QtPlugin>
+
+void printResources() {
+    // Start at the root of the Qt resource system
+    QDirIterator it(":", QDirIterator::Subdirectories);
+
+    while (it.hasNext()) {
+        QString filePath = it.next();
+        qDebug() << filePath;
+    }
+}
+
+extern void qml_static_register_types_Material();
+
 #include <QtQuickTest/QtQuickTest>
-QUICK_TEST_MAIN(material)
+int main(int argc, char** argv)
+{
+	QTest::setMainSourcePath(__FILE__, QT_TESTCASE_BUILDDIR);
+
+    //Q_INIT_RESOURCE(Material);
+    qml_static_register_types_Material();
+
+    Q_INIT_RESOURCE(QtQuick_Controls_Styles_Material);
+    Q_INIT_RESOURCE(Material_ListItems);
+    Q_INIT_RESOURCE(Material_Extras);
+
+	return quick_test_main(argc, argv, "meterial", nullptr);
+}

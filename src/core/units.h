@@ -16,6 +16,7 @@
 #include <QScreen>
 #include <QQuickWindow>
 #include <QPointer>
+#include <QQmlEngine>
 
 class UnitsAttached : public QObject
 {
@@ -56,12 +57,17 @@ private:
 class Units : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+    QML_ATTACHED(UnitsAttached)
 
 public:
     static UnitsAttached *qmlAttachedProperties(QObject *object)
     {
         return new UnitsAttached(object);
     }
+
+
 };
 
 QML_DECLARE_TYPEINFO(Units, QML_HAS_ATTACHED_PROPERTIES)
