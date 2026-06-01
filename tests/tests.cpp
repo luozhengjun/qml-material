@@ -16,10 +16,8 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #include <QDirIterator>
 #include <QDebug>
-#include <QtPlugin>
 
 void printResources() {
     // Start at the root of the Qt resource system
@@ -32,18 +30,19 @@ void printResources() {
 }
 
 extern void qml_static_register_types_Material();
+extern void qml_static_register_types_Material_ListItems();
+extern void qml_static_register_types_Material_Extras();
+extern void qml_static_register_types_QtQuick_Controls_Styles_Material();
 
 #include <QtQuickTest/QtQuickTest>
 int main(int argc, char** argv)
 {
 	QTest::setMainSourcePath(__FILE__, QT_TESTCASE_BUILDDIR);
 
-    //Q_INIT_RESOURCE(Material);
-    qml_static_register_types_Material();
-
-    Q_INIT_RESOURCE(QtQuick_Controls_Styles_Material);
-    Q_INIT_RESOURCE(Material_ListItems);
-    Q_INIT_RESOURCE(Material_Extras);
+    //qml_static_register_types_Material();
+    //qml_static_register_types_Material_ListItems();
+    //qml_static_register_types_Material_Extras();
+    //qml_static_register_types_QtQuick_Controls_Styles_Material();
 
 	return quick_test_main(argc, argv, "meterial", nullptr);
 }

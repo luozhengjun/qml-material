@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 4.0...4.3)
 
 project(qml-material)
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Qt5QMLPlugin)
 
 if(MSVC)

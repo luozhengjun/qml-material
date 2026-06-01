@@ -92,7 +92,7 @@ qt_add_qml_module(material
 )
 
 target_include_directories(material
-    PUBLIC core
+    PRIVATE core
 )
 
 target_link_libraries(material

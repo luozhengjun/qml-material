@@ -9,4 +9,8 @@ qt_add_qml_module(extras
         CircleMask.qml
         ColumnFlow.qml
         Image.qml
+    DEPEND_MODULE
+        QtQuick QtGraphicalEffects
+    DEPEND_MODULE_VERSION
+        2.4 1.0
 )

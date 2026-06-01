@@ -21,8 +21,5 @@ qt_add_qml_module(test
 target_link_libraries(test
     PRIVATE Qt5::Quick
     PRIVATE Qt5::QuickTest
-    PRIVATE material
-    PRIVATE styles
-    PRIVATE listitems
-    PRIVATE extras
+    PRIVATE Materialplugin #extras fonts icons listitems styles
 )
