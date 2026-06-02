@@ -24,8 +24,6 @@ qt_add_qml_module(fonts
         roboto/RobotoCondensed-Light.ttf
         roboto/RobotoCondensed-LightItalic.ttf
         roboto/RobotoCondensed-Regular.ttf
-    DEPEND_MODULE
-        QtQuick
-    DEPEND_MODULE_VERSION
-        2.0
+    DEPENDENCIES
+        QtQuick/2.0
 )

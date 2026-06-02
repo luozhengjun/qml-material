@@ -11,4 +11,7 @@ qt_add_qml_module(listitems
         Standard.qml
         Subheader.qml
         Subtitled.qml
+    DEPENDENCIES
+        Material/0.3
+        Material.Extras/0.1
 )
